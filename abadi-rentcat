@@ -1,0 +1,164 @@
+<!DOCTYPE html><html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ABADI RENTCAR</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background: #f2f7ff;
+      color: #333;
+    }
+    header {
+      background: #005bbb;
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+    }
+    nav {
+      background: #003f87;
+      padding: 15px;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 20px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .container {
+      padding: 30px 20px;
+    }
+    .car-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+    .car {
+      background: white;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease;
+    }
+    .car:hover {
+      transform: scale(1.03);
+    }
+    footer {
+      background: #ddd;
+      text-align: center;
+      padding: 15px;
+      margin-top: 30px;
+    }
+    input, select {
+      padding: 12px;
+      width: 100%;
+      margin-top: 8px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+    button {
+      padding: 12px;
+      background: #005bbb;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      width: 100%;
+      font-weight: bold;
+    }
+    button:hover {
+      background: #004a99;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>ABADI RENTCAR</h1>
+    <p>Sewa Mobil di Manokwari dan Sekitarnya</p>
+  </header>  <nav>
+    <a href="#mobil">Daftar Mobil</a>
+    <a href="#pesan">Pesan</a>
+    <a href="#tentang">Tentang</a>
+    <a href="#kontak">Kontak</a>
+  </nav>  <div class="container" id="mobil">
+    <h2>Daftar Mobil</h2>
+    <div class="car-list">
+      <div class="car">
+        <h3>Avanza</h3>
+        <p>Rp400.000 / hari</p>
+      </div>
+      <div class="car">
+        <h3>Terios / Rush</h3>
+        <p>Rp500.000 / hari</p>
+      </div>
+      <div class="car">
+        <h3>Pickup</h3>
+        <p>Rp350.000 / hari</p>
+      </div>
+      <div class="car">
+        <h3>All New Innova</h3>
+        <p>Rp700.000 / hari</p>
+      </div>
+      <div class="car">
+        <h3>Fortuner</h3>
+        <p>Rp1.200.000 / hari</p>
+      </div>
+      <div class="car">
+        <h3>Innova Zenix</h3>
+        <p>Rp850.000 / hari</p>
+      </div>
+      <div class="car">
+        <h3>Hiace</h3>
+        <p>Rp1.000.000 / hari</p>
+      </div>
+      <div class="car">
+        <h3>Alphard</h3>
+        <p>Rp1.800.000 / hari</p>
+      </div>
+    </div>
+  </div>  <div class="container" id="pesan">
+    <h2>Form Pemesanan</h2>
+    <form>
+      <label>Nama:</label>
+      <input type="text" id="nama" required />
+      <label>Nomor WhatsApp:</label>
+      <input type="tel" id="wa" required />
+      <label>Pilih Mobil:</label>
+      <select id="mobilpilih">
+        <option>Avanza</option>
+        <option>Terios / Rush</option>
+        <option>Pickup</option>
+        <option>All New Innova</option>
+        <option>Fortuner</option>
+        <option>Innova Zenix</option>
+        <option>Hiace</option>
+        <option>Alphard</option>
+      </select>
+      <label>Tanggal Sewa:</label>
+      <input type="date" id="tanggal" required />
+      <button type="button" onclick="kirimWAlangsung()">Kirim via WhatsApp</button>
+    </form>
+  </div>  <div class="container" id="tentang">
+    <h2>Tentang Kami</h2>
+    <p>ABADI RENTCAR adalah layanan sewa mobil terpercaya di Manokwari dan sekitarnya. Kami menyediakan berbagai pilihan mobil dengan harga terjangkau dan layanan ramah.</p>
+  </div>  <div class="container" id="kontak">
+    <h2>Kontak</h2>
+    <p>WhatsApp: <a href="https://wa.me/6281241109928">0812-4110-9928</a></p>
+    <p>Area: Manokwari dan Sekitarnya</p>
+  </div>  <footer>
+    <p>&copy; 2025 ABADI RENTCAR</p>
+  </footer>  <script>
+    function kirimWAlangsung() {
+      let nama = document.getElementById("nama").value;
+      let wa = document.getElementById("wa").value;
+      let mobil = document.getElementById("mobilpilih").value;
+      let tanggal = document.getElementById("tanggal").value;
+      let pesan = `Halo, saya ${nama}. Saya ingin sewa mobil ${mobil} pada tanggal ${tanggal}. Nomor saya: ${wa}`;
+      let link = `https://wa.me/6281241109928?text=${encodeURIComponent(pesan)}`;
+      window.location.href = link;
+    }
+  </script></body>
+</html>
